@@ -28,6 +28,10 @@ En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia e
 
 [Include any 3D modeling libraries or dependencies.]
 
+### Software Architecture Diagram
+![Software Architecture Diagram for Project LittleRescuer (UAB)](./Modelo/SW_Architecture/SW_Architecture_v2.png)
+
+
 ## TODOs
 
 - [ ] Task 1
