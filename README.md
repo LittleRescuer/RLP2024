@@ -1,6 +1,6 @@
 # Little Rescuer
 
-## Description
+## Descripción
 
 "Little Rescuer" es el prototipo de un robot autónomo diseñado para intervenir rápidamente en situaciones de emergencia en la carretera. Este dispositivo, con forma de automóvil compacto, está equipado con una variedad de funciones para garantizar la seguridad y el bienestar de los conductores y pasajeros involucrados en un accidente.
 
@@ -12,7 +12,7 @@ Además de tomar fotografías, "Little Rescuer" activa su luz rotativa de emerge
 
 En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia en la carretera, ofreciendo una respuesta rápida y coordinada para proteger la seguridad y el bienestar de todos los involucrados en un accidente de tráfico, evitando situaciones de peligro al tener a peatones en la calzada.
 
-## Library
+## Librerias
 
 [Include any dependences. p.e Python, OpenCV, Raspberry Pi OS...]
 
@@ -22,7 +22,7 @@ En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia e
 
 ### 3D
 
-[Include any 3D modeling libraries or dependencies.]
+Se pueden encontrar los componentes 3D  [aquí](./Modelo/Componenetes%20Chasis)
 
 ### Software Architecture Diagram
 ![Software Architecture Diagram for Project LittleRescuer (UAB)](./Modelo/SW_Architecture/SW_Architecture_v2.png)
