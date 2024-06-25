@@ -1,0 +1,29 @@
+
+
+Raspberry Pi GPIO          L298N H-Bridge          
+-------------------        --------------          
+GPIO 17 (pin 11)  -------- IN1                     
+GPIO 18 (pin 12)  -------- IN2                      
+GPIO 22 (pin 15)  -------- IN3                      
+GPIO 23 (pin 16)  -------- IN4                      
+5V (pin 2/4)      -------- 5V (VCC)                 
+GND (pin 6)       -------- GND                      
+                 12V -------|                       
+                       |----|                       
+GND -------------------|----   
+
+
+
+Motores
+-------
+OUT1 ----------------- Motor 1                      
+OUT2 ----------------- Motor 1                      
+OUT3 ----------------- Motor 2                      
+OUT4 ----------------- Motor 2                      
+ 
+ 
+Servomotor
+----------
+GPIO 25 (pin 22)  -------- Signal                   
+5V (pin 2/4)      -------- VCC                      
+GND (pin 6)       -------- GND                      
