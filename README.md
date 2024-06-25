@@ -1,5 +1,5 @@
 # Little Rescuer
-(./LittleRescuer_Icon.jpeg)
+![Project Icon](./LittleRescuer_Icon.jpeg)
 
 ## Descripción
 
