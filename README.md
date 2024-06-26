@@ -24,8 +24,6 @@ En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia e
 [Include any hardware-related libraries or dependencies.]
 
 ### Schematic
-
-Las connexiones de Little Rescuer 
 ![Schematic](./Schematics/Esquema_DC_DualMotor+Servo.png)
 
 ### 3D
