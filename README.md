@@ -54,10 +54,16 @@ Queremos agradecer a nuestros 3 profesores de la asignatura:
 
 Gracias a su apoyo, este proyecto ha podido superar todos sus altibajos y llegar a buen término con éxito. Estamos agradecidos por el apoyo y la orientación brindada por nuestros profesores a lo largo de este proyecto. Durante los momentos críticos, ofrecieron su experiencia y conocimientos, permitiéndonos encontrar soluciones efectivas.
 
-## Refs
+### Refs
 Los proyectos que hemos usado como referencia son:
 [1](https://www.instructables.com/Autonomous-Autonavigation-Robot-Arduino/)
 [2](https://www.instructables.com/Self-Driving-Car-Using-Arduinoautonomous-Guided-Ve/)
 [3](https://github.com/AtsushiSakai/PythonRobotics)
 [4](https://github.com/dctian/DeepPiCar)
+
+### Autores
+- Marc Giró Palacios
+- Angel Antonio Gomez Nicolas
+- Adrian Stoiciu
+- Miguel Vallina Samaniego
 
