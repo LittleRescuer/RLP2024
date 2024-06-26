@@ -23,6 +23,11 @@ En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia e
 
 [Include any hardware-related libraries or dependencies.]
 
+### Schematic
+
+Las connexiones de Little Rescuer 
+![Schematic](./Schematics/Esquema_DC_DualMotor+Servo.png)
+
 ### 3D
 
 Se pueden encontrar los componentes 3D  [aquí](./Modelo/Componenetes%20Chasis)
@@ -41,5 +46,9 @@ Queremos agradecer a nuestros 3 profesores de la asignatura:
 Gracias a su apoyo, este proyecto ha podido superar todos sus altibajos y llegar a buen término con éxito. Estamos agradecidos por el apoyo y la orientación brindada por nuestros profesores a lo largo de este proyecto. Durante los momentos críticos, ofrecieron su experiencia y conocimientos, permitiéndonos encontrar soluciones efectivas.
 
 ## Refs
+Los proyectos que hemos usado como referencia son:
+[1](https://www.instructables.com/Autonomous-Autonavigation-Robot-Arduino/)
+[2](https://www.instructables.com/Self-Driving-Car-Using-Arduinoautonomous-Guided-Ve/)
+[3](https://github.com/AtsushiSakai/PythonRobotics)
+[4](https://github.com/dctian/DeepPiCar)
 
-[Include any references or resources related to the project.]
