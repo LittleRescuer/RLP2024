@@ -15,7 +15,9 @@ En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia e
 
 ## Librerías
 
-[Include any dependences. p.e Python, OpenCV, Raspberry Pi OS...]
+- Python 3.x
+- Raspberry Pi OS Lite
+- OpenCV 4.8.0+
 
 ### Hardware
 
