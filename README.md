@@ -44,6 +44,10 @@ Se pueden encontrar los componentes 3D  [aquí](./Modelo/Componenetes%20Chasis)
 ### Diagrama de arquitectura del Software
 ![Diagrama de arquitectura del Software del proyecto LittleRescuer (UAB)](./Modelo/SW_Architecture/SW_Architecture_v2.png)
 
+### Página Web
+
+Little Rescuer también cuenta con una página web donde se pueden ver forografías tomadas por el robot. Estas fotografías se realizan una vez el robot ha llegado a la distancia de seguridad de 200 metros alejado del vehículo averiado. Se muestran todas las imágenes que se han realizado con la fecha de realización y un botón de descarga. La página web se puede consultar [aquí](https://little-rescuer.vercel.app).
+
 ### Agradecimientos
 
 Queremos agradecer a nuestros 3 profesores de la asignatura:
