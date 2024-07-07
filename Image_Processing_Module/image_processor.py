@@ -9,6 +9,7 @@ class ImageProcessor:
     def __init__(self):
         self.picam2 = Picamera2()
         self.picam2.start()
+        print("Image Processor Initialized")
 
     def capture_frame(self):
         frame = self.picam2.capture_array()
@@ -55,6 +56,9 @@ class ImageProcessor:
         frame_center = frame.shape[1] // 2
         cv2.line(display_frame, (frame_center, 0), (frame_center, frame.shape[0]), (255, 0, 0), 2)
         return None, display_frame
+    
+    def writeImage(self, frame, file_name):
+        cv2.imwrite(file_name, frame)
 
     def close(self):
         self.picam2.close()
