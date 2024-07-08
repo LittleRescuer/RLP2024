@@ -2,6 +2,7 @@
 from Communications_Module.image_sender import ImageUploader
 from Image_Processing_Module.image_processor import ImageProcessor
 from Movement_Module.movement_controller import MovementController
+from Camera_Tracking_Module.servo_controller import ServoController
 from time import sleep, time
 
 print("Modules Imported Successfully")
@@ -10,6 +11,7 @@ print("Modules Imported Successfully")
 imageUploader = ImageUploader(None)
 imageProcessor = ImageProcessor()
 movementController = MovementController()
+servoController = ServoController()
 
 
 
@@ -40,6 +42,19 @@ def detectLine(frame):
             return { "position": "right", "line_position": line_position }
     else:
         return { "position": None, "line_position": None }
+    
+# Returns True if has to continue to the next loop iteration
+def decideMovement(line):
+    if line["position"] == "center" or line["position"] is None:
+        movementController.moveForward()
+        return False
+    elif line["position"] == "left":
+        movementController.moveLeft()
+        return True
+    elif line["position"] == "right":
+        movementController.moveRight()
+        return True
+        
 
 def main():
     startTime = time()
@@ -47,14 +62,8 @@ def main():
     while True:
         frame = captureFrame()
         line = detectLine(frame)
-        if line["position"] == "center" or line["position"] is None:
-            movementController.moveForward()
-        elif line["position"] == "left":
-            movementController.moveLeft()
-            sleep(0.5)
-            continue
-        elif line["position"] == "right":
-            movementController.moveRight()
+        hasToContinue = decideMovement(line)
+        if hasToContinue:
             sleep(0.5)
             continue
 
@@ -64,6 +73,9 @@ def main():
         print("Time Elapsed: ", actualTime - startTime)
         sleep(5)
     movementController.stop()
+
+    servoController.moveToMax()
+    sleep(1) # Wait for the servo to move
     
     finalFrame = captureFrame()
     uploadImage(finalFrame)
