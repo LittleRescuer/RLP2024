@@ -65,6 +65,9 @@ def main():
         hasToContinue = decideMovement(line)
         if hasToContinue:
             sleep(0.5)
+            actualTime = time()
+            if actualTime - startTime > 25:
+                break
             continue
 
         actualTime = time()
