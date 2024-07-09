@@ -62,26 +62,30 @@ def main():
     while True:
         frame = captureFrame()
         line = detectLine(frame)
+        
+
+        actualTime = time()
+        print("Time Elapsed: ", actualTime - startTime)
+        if actualTime - startTime > 15:
+            break
+
         hasToContinue = decideMovement(line)
         if hasToContinue:
             sleep(0.5)
-            actualTime = time()
-            if actualTime - startTime > 25:
-                break
             continue
-
-        actualTime = time()
-        if actualTime - startTime > 25:
-            break
-        print("Time Elapsed: ", actualTime - startTime)
-        sleep(5)
+        else :
+            sleep(5)
+    
     movementController.stop()
 
     servoController.moveToMax()
-    sleep(1) # Wait for the servo to move
+    print("Waiting for the servo to rotate")
+    sleep(10) # Wait for the servo to move
     
     finalFrame = captureFrame()
     uploadImage(finalFrame)
+    
+    imageProcessor.close()
 
 if __name__ == "__main__":
     main()

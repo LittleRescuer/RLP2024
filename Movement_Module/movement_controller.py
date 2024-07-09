@@ -47,8 +47,6 @@ class MovementController:
 
     def moveForward(self):
         print("Moving Forward")
-        self.stop()
-
 
         # Right Wheel
         GPIO.output(self.ain2, GPIO.HIGH)
@@ -85,7 +83,9 @@ class MovementController:
 
         GPIO.output(self.bin1, GPIO.LOW)
         GPIO.output(self.bin2, GPIO.LOW)
-        sleep(0.5) # Stop for 0.5 seconds in order to not mess up the balance
+        GPIO.output(self.stby, GPIO.LOW)
+        GPIO.output(self.pwm_a, GPIO.LOW)
+        GPIO.output(self.pwm_b, GPIO.LOW)
 
     def __del__(self):
         GPIO.cleanup()

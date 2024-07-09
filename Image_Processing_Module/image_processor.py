@@ -9,6 +9,7 @@ class ImageProcessor:
     def __init__(self):
         self.picam2 = Picamera2()
         self.picam2.start()
+        self.__images = []
         print("Image Processor Initialized")
 
     def capture_frame(self):
@@ -55,10 +56,13 @@ class ImageProcessor:
         # If no line is detected, just draw the center line
         frame_center = frame.shape[1] // 2
         cv2.line(display_frame, (frame_center, 0), (frame_center, frame.shape[0]), (255, 0, 0), 2)
+        self.__images.append(frame)
         return None, display_frame
     
     def writeImage(self, frame, file_name):
         cv2.imwrite(file_name, frame)
 
     def close(self):
+        for frameIndex in range(len(self.__images)):
+            self.writeImage(self.__images[frameIndex], f"frame_{frameIndex}.jpg")
         self.picam2.close()

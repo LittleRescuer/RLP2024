@@ -5,7 +5,7 @@ class ServoController:
     def __init__(self):
         factory = PiGPIOFactory()
         self.servo = Servo(8, pin_factory=factory)
-        self.servo.moveToMid()
+        self.servo.mid()
     
     def moveToMin(self):
         self.servo.min()
