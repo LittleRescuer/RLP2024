@@ -13,6 +13,10 @@ Además de tomar fotografías, "Little Rescuer" activa su luz rotativa de emerge
 
 En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia en la carretera, ofreciendo una respuesta rápida y coordinada para proteger la seguridad y el bienestar de todos los involucrados en un accidente de tráfico, evitando situaciones de peligro al tener a peatones en la calzada.
 
+# Imágenes
+A continuación, mostramos una imagen de como se ve físicamente el robot. No obstante, hay más imágenes en la [siguiente carpeta](./img):
+![Little Rescuer Image](./img/1.jpg "Little Rescuer Image")
+
 ## Librerías
 
 - Python 3.x
