@@ -18,21 +18,27 @@ En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia e
 - Python 3.x
 - Raspberry Pi OS Lite
 - OpenCV 4.8.0+
+- gpiozero
+- requests
+- picamera2
+- numpy
+- RPi.GPIO
 
 ### Hardware
 
-- [Cámara Raspberry Pi v2 - 8 Megapixels](https://tienda.bricogeek.com/accesorios-raspberry-pi/822-camara-raspberry-pi-v2-8-megapixels.html?utm_source=tienda&utm_medium=click&utm_campaign=prodrel)
-- [Kit básico Raspberry Pi Zero Wifi + MicroSD 32GB](https://tienda.bricogeek.com/placas-raspberry-pi/1082-kit-basico-raspberry-pi-zero-wifi-microsd-32gb.html?search_query=raspberry+0&results=119)
-- [Controlador de motores TB6612FNG](https://tienda.bricogeek.com/controladores-motores/999-controlador-de-motores-tb6612fng.html?gad_source=1&gclid=CjwKCAjwkuqvBhAQEiwA65XxQGEKl4mRS8Lng237hrTSqmpWEiZjts-D5bgiraJukbpSPVhL-e4TzRoCnqwQAvD_BwE)
-- [Motor con eje ángulo recto y reductora 48:1](https://tienda.bricogeek.com/motores-dc/1048-motor-con-eje-angulo-recto-y-reductora-481.html)
-- [Batería AA recargable - NiMH 2500mAh](https://tienda.bricogeek.com/baterias-lipo/315-bateria-aa-recargable-nimh-2500mah.html)
-- [Base para baterías (4xAA)](https://tienda.bricogeek.com/componentes/160-base-para-baterias-4xaa.html)
-- [Luz emergencia V16](https://www.amazon.es/dp/B0CPB1296V/ref=sspa_dk_detail_3?pd_rd_i=B0CPB1296V&pd_rd_w=A14s6&content-id=amzn1.sym.9c67f205-18e7-4d34-beb2-37ec708092ed&pf_rd_p=9c67f205-18e7-4d34-beb2-37ec708092ed&pf_rd_r=QXKYST03HQ85EHN8P6MJ&pd_rd_wg=sntWz&pd_rd_r=abeac907-5a0c-494a-a888-670a00a9615b&s=automotive&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&th=1)
-- [Motor servo SG90](https://www.amazon.com/-/es/DIYables-grados-Arduino-ESP8266-Raspberry/dp/B0C7BL12RG/ref=sr_1_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1L0LB8SVZ5SJ7&dib=eyJ2IjoiMSJ9.tF3g0NDLGtt5fAwiWI4hwkf0ADCXrya7qcPuXLK7m_Y9YkT4sUTy_d6LaOmDQYo0jZOIAxJn_NMLwEoQqMFkjmHtnyHt091FQk22sboJVID5xGpKN2jSJ5Q1mmV708nmdxvCeiwADP3tDwaaRClCEKu30IIIwV4ogP0hgORz-ZHXPk_QpMFjBc8yteDM50A9LWFsO2qiWLa4jL2pegiEDGwB8uZasnkRkqe0UPXYwLawewg-D_5SGVHz6-ufVBhY_vG5s5-DcdZXPyY0d3Bsbwdwx_IAoJ0sYpDvPtjhYfk.82u4GTRf0BEuKTSb3ELLK773mNGI7GOTw9fx8-Q4UIk&dib_tag=se&keywords=SERVOMOTOR%2B180%2BGRADOS&qid=1709728209&sprefix=servomotor%2B180%2Bgrados%2Caps%2C170&sr=8-5&th=1)
-- [Antena GPS (SIM808)](https://www.amazon.com/-/es/SIM808-SIM908-desarrollo-disponible-arduino/dp/B0CJ7VSG82/ref=sr_1_1?_mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2N80TQJYI0UXU&dib=eyJ2IjoiMSJ9.hXv-p_xSEM7DAyEPmF8S9rntLb2fWXF45txRj4ajJs8J286V2FJjNUfeByuo2se3afE2-jE6zZhEJy-JdfspT8qRc2CKxvUgImxmeibZuPeULHREtyX-DdVPMcpXsO9BS6HVFriIcqRNj-L-dr1pQ.C77Y681pZcTeAl57demFS5VB_7dXKyhEeCcjzLODxB4&dib_tag=se&keywords=SIM908&qid=1709727934&s=sporting-goods&sprefix=sim908%2Csporting-intl-ship%2C163&sr=1-1)
-- [Power Bank 10000mAh Dual 2.4A Cargador de Banco de Energía de Alta Velocidad Entrada USB-C Paquete de Bater ía Externa para Teléfono Celular iPhone 12 iPad Samsung S21 Huawei Xiaomi etc](https://www.amazon.es/10000mAh-Cargador-Energ%C3%ADa-Velocidad-Tel%C3%A9fono/dp/B09K3BQBW6/ref=sr_1_11?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3OMWEL1JOVABO&dib=eyJ2IjoiMSJ9.Vdk9NA-TqhAZ7Ba5BsrwliKNJTF832vjMHPGJBVkolGPGQieMDjSgVieXlwNvTlDr6x8R5nyqlxjLOJKlP9IU2XHVlecU7w4H_yYHi2p63pfYoXv68PLTgfhjFQ9B1w1F7eZ3LQwrOu1Z85h8v0u78oIK7V0-rQUWGI1O7HaqJ4h8g-zjzQkZcMglZz60j8LcAJC5YVTGg26YLCZFfHatUrzrxcefKZkBt3NFkkzB3giYmqHm7NvFvKR_dPm3Ehj885Qxu10wxCk-52GtFx0sYchFD8EXSemQovuvXtULpM.Re02CkR7yzbGIx-qBL01_aJLekveOBQ498wtp5VZzKA&dib_tag=se&keywords=power%2Bbank%2B2%2C5a%2B5v&qid=1710930248&sprefix=power%2Bbank%2B2%2B5a%2B5v%2Caps%2C98&sr=8-11&th=1)
-- [Cable USB C a Micro USB](https://www.amazon.com/-/es/flexible-soporta-sincronizaci%C3%B3n-compatible-MacBook/dp/B0BX5G8WNZ/ref=sr_1_5?crid=PH82Y5PL6LAS&dib=eyJ2IjoiMSJ9.85K-eyJjWT0MAs6p-6W9GREkk6xK8f6zTZdz6GZvL04CgCJWGR1idHnKwx4sKF22ftCbnOK6LJJBkmOTdD8THtXEDg80_U6EUX6N1EEw3JelCgAL1DAKpEPsohoMG8dOxmkRr-Y9xce8-n6DpROXzvFz5R2Bvw3Q4MrRbcZDlR5qP_3Cq4WM8iikfGiGzBB_oNkKkJni_Kmu18wHWJqw7IZiPVfVOcxTV0yDkzsII30.op-QSihLrfOppXYToA9V57npy248FMzIhSJlL578jeA&dib_tag=se&keywords=microusb%2Bto%2Busb%2Bc&qid=1710930565&sprefix=microusb%2Bto%2Caps%2C209&sr=8-5&th=1)
-
+| Imagen      | Descripción      | Link |
+| ------------- | ------------- | ------------- |
+| ![Cámara Raspberry Pi v2 - 8 Megapixels](https://tienda.bricogeek.com/3115-large_default/camara-raspberry-pi-v2-8-megapixels.jpg "Cámara Raspberry Pi v2 - 8 Megapixels") | Cámara Raspberry Pi v2 - 8 Megapixels | [Link](https://tienda.bricogeek.com/accesorios-raspberry-pi/822-camara-raspberry-pi-v2-8-megapixels.html?utm_source=tienda&utm_medium=click&utm_campaign=prodrel) |
+| ![Kit básico Raspberry Pi Zero Wifi + MicroSD 32GB](https://tienda.bricogeek.com/4669-large_default/kit-basico-raspberry-pi-zero-wifi-microsd-32gb.jpg "Kit básico Raspberry Pi Zero Wifi + MicroSD 32GB") | Kit básico Raspberry Pi Zero Wifi + MicroSD 32GB | [Link](https://tienda.bricogeek.com/placas-raspberry-pi/1082-kit-basico-raspberry-pi-zero-wifi-microsd-32gb.html?search_query=raspberry+0&results=119) |
+| ![Controlador de motores TB6612FNG](https://tienda.bricogeek.com/4166-large_default/controlador-de-motores-tb6612fng.jpg "Controlador de motores TB6612FNG") | Controlador de motores TB6612FNG | [Link](https://tienda.bricogeek.com/controladores-motores/999-controlador-de-motores-tb6612fng.html?gad_source=1) |
+| ![Motor con eje ángulo recto y reductora 48:1](https://tienda.bricogeek.com/8251-large_default/motor-con-eje-angulo-recto-y-reductora-481.jpg "Motor con eje ángulo recto y reductora 48:1") | Motor con eje ángulo recto y reductora 48:1| [Link](https://tienda.bricogeek.com/motores-dc/1048-motor-con-eje-angulo-recto-y-reductora-481.html) |
+| ![Batería AA recargable - NiMH 2500mAh](https://tienda.bricogeek.com/7876-large_default/bateria-aa-recargable-nimh-2500mah.jpg "Batería AA recargable - NiMH 2500mAh") | Batería AA recargable - NiMH 2500mAh| [Link](https://tienda.bricogeek.com/baterias-lipo/315-bateria-aa-recargable-nimh-2500mah.html) |
+| ![Base para baterías (4xAA)](https://tienda.bricogeek.com/470-large_default/base-para-baterias-4xaa.jpg "Base para baterías (4xAA)") | Base para baterías (4xAA)| [Link](https://tienda.bricogeek.com/componentes/160-base-para-baterias-4xaa.html) |
+| ![Luz emergencia V16](https://m.media-amazon.com/images/I/51ekE59AkcL._AC_SX679_.jpg "Luz emergencia V16") | Luz emergencia V16| [Link](https://www.amazon.es/dp/B0CPB1296V/ref=sspa_dk_detail_3?pd_rd_i=B0CPB1296V&pd_rd_w=A14s6&content-id=amzn1.sym.9c67f205-18e7-4d34-beb2-37ec708092ed&pf_rd_p=9c67f205-18e7-4d34-beb2-37ec708092ed&pf_rd_r=QXKYST03HQ85EHN8P6MJ&pd_rd_wg=sntWz&pd_rd_r=abeac907-5a0c-494a-a888-670a00a9615b&s=automotive&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&th=1) |
+| ![Motor servo SG90](https://m.media-amazon.com/images/I/418TgziHLUL._SY445_SX342_QL70_FMwebp_.jpg "Motor servo SG90") | Motor servo SG90| [Link](https://www.amazon.com/-/es/DIYables-grados-Arduino-ESP8266-Raspberry/dp/B0C7BL12RG/ref=sr_1_5?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1L0LB8SVZ5SJ7&dib=eyJ2IjoiMSJ9.tF3g0NDLGtt5fAwiWI4hwkf0ADCXrya7qcPuXLK7m_Y9YkT4sUTy_d6LaOmDQYo0jZOIAxJn_NMLwEoQqMFkjmHtnyHt091FQk22sboJVID5xGpKN2jSJ5Q1mmV708nmdxvCeiwADP3tDwaaRClCEKu30IIIwV4ogP0hgORz-ZHXPk_QpMFjBc8yteDM50A9LWFsO2qiWLa4jL2pegiEDGwB8uZasnkRkqe0UPXYwLawewg-D_5SGVHz6-ufVBhY_vG5s5-DcdZXPyY0d3Bsbwdwx_IAoJ0sYpDvPtjhYfk.82u4GTRf0BEuKTSb3ELLK773mNGI7GOTw9fx8-Q4UIk&dib_tag=se&keywords=SERVOMOTOR%2B180%2BGRADOS&qid=1709728209&sprefix=servomotor%2B180%2Bgrados%2Caps%2C170&sr=8-5&th=1) |
+| ![Antena GPS (SIM808)](https://m.media-amazon.com/images/I/51BoBVag6TL._SY445_SX342_QL70_FMwebp_.jpg "Antena GPS (SIM808)") | Antena GPS (SIM808)| [Link](https://www.amazon.com/-/es/SIM808-SIM908-desarrollo-disponible-arduino/dp/B0CJ7VSG82/ref=sr_1_1?_mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2N80TQJYI0UXU&dib=eyJ2IjoiMSJ9.hXv-p_xSEM7DAyEPmF8S9rntLb2fWXF45txRj4ajJs8J286V2FJjNUfeByuo2se3afE2-jE6zZhEJy-JdfspT8qRc2CKxvUgImxmeibZuPeULHREtyX-DdVPMcpXsO9BS6HVFriIcqRNj-L-dr1pQ.C77Y681pZcTeAl57demFS5VB_7dXKyhEeCcjzLODxB4&dib_tag=se&keywords=SIM908&qid=1709727934&s=sporting-goods&sprefix=sim908%2Csporting-intl-ship%2C163&sr=1-1) |
+| ![Power Bank 10000mAh Dual 2.4A Cargador de Banco de Energía de Alta Velocidad Entrada USB-C Paquete de Bater ía Externa para Teléfono Celular iPhone 12 iPad Samsung S21 Huawei Xiaomi etc](https://m.media-amazon.com/images/I/51zN0IDfVpL._AC_SX679_.jpg "Power Bank 10000mAh Dual 2.4A Cargador de Banco de Energía de Alta Velocidad Entrada USB-C Paquete de Bater ía Externa para Teléfono Celular iPhone 12 iPad Samsung S21 Huawei Xiaomi etc") | Power Bank 10000mAh Dual 2.4A Cargador de Banco de Energía de Alta Velocidad Entrada USB-C Paquete de Bater ía Externa para Teléfono Celular iPhone 12 iPad Samsung S21 Huawei Xiaomi etc| [Link](https://www.amazon.es/10000mAh-Cargador-Energ%C3%ADa-Velocidad-Tel%C3%A9fono/dp/B09K3BQBW6/ref=sr_1_11?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3OMWEL1JOVABO&dib=eyJ2IjoiMSJ9.Vdk9NA-TqhAZ7Ba5BsrwliKNJTF832vjMHPGJBVkolGPGQieMDjSgVieXlwNvTlDr6x8R5nyqlxjLOJKlP9IU2XHVlecU7w4H_yYHi2p63pfYoXv68PLTgfhjFQ9B1w1F7eZ3LQwrOu1Z85h8v0u78oIK7V0-rQUWGI1O7HaqJ4h8g-zjzQkZcMglZz60j8LcAJC5YVTGg26YLCZFfHatUrzrxcefKZkBt3NFkkzB3giYmqHm7NvFvKR_dPm3Ehj885Qxu10wxCk-52GtFx0sYchFD8EXSemQovuvXtULpM.Re02CkR7yzbGIx-qBL01_aJLekveOBQ498wtp5VZzKA&dib_tag=se&keywords=power%2Bbank%2B2%2C5a%2B5v&qid=1710930248&sprefix=power%2Bbank%2B2%2B5a%2B5v%2Caps%2C98&sr=8-11&th=1) |
+| ![Cable USB C a Micro USB](https://m.media-amazon.com/images/I/41Skh5LRwHL._SY445_SX342_QL70_FMwebp_.jpg "Cable USB C a Micro USB") | Cable USB C a Micro USB| [Link](https://www.amazon.com/-/es/flexible-soporta-sincronizaci%C3%B3n-compatible-MacBook/dp/B0BX5G8WNZ/ref=sr_1_5?crid=PH82Y5PL6LAS&dib=eyJ2IjoiMSJ9.85K-eyJjWT0MAs6p-6W9GREkk6xK8f6zTZdz6GZvL04CgCJWGR1idHnKwx4sKF22ftCbnOK6LJJBkmOTdD8THtXEDg80_U6EUX6N1EEw3JelCgAL1DAKpEPsohoMG8dOxmkRr-Y9xce8-n6DpROXzvFz5R2Bvw3Q4MrRbcZDlR5qP_3Cq4WM8iikfGiGzBB_oNkKkJni_Kmu18wHWJqw7IZiPVfVOcxTV0yDkzsII30.op-QSihLrfOppXYToA9V57npy248FMzIhSJlL578jeA&dib_tag=se&keywords=microusb%2Bto%2Busb%2Bc&qid=1710930565&sprefix=microusb%2Bto%2Caps%2C209&sr=8-5&th=1) |
 
 ### Schematic
 ![Schematic](./Schematics/Esquema_DC_DualMotor+Servo.png)
@@ -48,6 +54,19 @@ Se pueden encontrar los componentes 3D  [aquí](./Modelo/Componenetes%20Chasis)
 
 Little Rescuer también cuenta con una página web donde se pueden ver forografías tomadas por el robot. Estas fotografías se realizan una vez el robot ha llegado a la distancia de seguridad de 200 metros alejado del vehículo averiado. Se muestran todas las imágenes que se han realizado con la fecha de realización y un botón de descarga. La página web se puede consultar [aquí](https://little-rescuer.vercel.app).
 
+### Refs
+Los proyectos que hemos usado como referencia son:
+- [Autonomous Autonavigation Robot (Arduino)](https://www.instructables.com/Autonomous-Autonavigation-Robot-Arduino/)
+- [Self Driving Car Using Arduino(autonomous Guided Vechicle)](https://www.instructables.com/Self-Driving-Car-Using-Arduinoautonomous-Guided-Ve/)
+- [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics)
+- [DeepPiCar](https://github.com/dctian/DeepPiCar)
+
+### Autores
+- Marc Giró Palacios
+- Angel Antonio Gomez Nicolas
+- Adrian Stoiciu
+- Miguel Vallina Samaniego
+
 ### Agradecimientos
 
 Queremos agradecer a nuestros 3 profesores de la asignatura:
@@ -57,17 +76,3 @@ Queremos agradecer a nuestros 3 profesores de la asignatura:
 - Vernon Stanley Albayeros Duarte
 
 Gracias a su apoyo, este proyecto ha podido superar todos sus altibajos y llegar a buen término con éxito. Estamos agradecidos por el apoyo y la orientación brindada por nuestros profesores a lo largo de este proyecto. Durante los momentos críticos, ofrecieron su experiencia y conocimientos, permitiéndonos encontrar soluciones efectivas.
-
-### Refs
-Los proyectos que hemos usado como referencia son:
-[1](https://www.instructables.com/Autonomous-Autonavigation-Robot-Arduino/)
-[2](https://www.instructables.com/Self-Driving-Car-Using-Arduinoautonomous-Guided-Ve/)
-[3](https://github.com/AtsushiSakai/PythonRobotics)
-[4](https://github.com/dctian/DeepPiCar)
-
-### Autores
-- Marc Giró Palacios
-- Angel Antonio Gomez Nicolas
-- Adrian Stoiciu
-- Miguel Vallina Samaniego
-
