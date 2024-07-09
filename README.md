@@ -48,7 +48,7 @@ En resumen, "Little Rescuer" es un valioso aliado en situaciones de emergencia e
 Se pueden encontrar los componentes 3D  [aquí](./Modelo/Componenetes%20Chasis)
 
 ### Diagrama de arquitectura del Software
-![Diagrama de arquitectura del Software del proyecto LittleRescuer (UAB)](./Modelo/SW_Architecture/SW_Architecture_v2.png)
+![Diagrama de arquitectura del Software del proyecto LittleRescuer (UAB)](./Modelo/SW_Architecture_v2.png)
 
 ### Página Web
 
